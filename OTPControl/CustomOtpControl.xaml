@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:OTPControl"
       BindingContext="{Binding  Source={x:Reference this}}"
       xmlns:renderer="clr-namespace:OTPControl.Renderer"
-      RowDefinitions="1,Auto"
+      RowDefinitions="1,Auto" ColumnDefinitions="Auto"
       x:Class="OTPControl.CustomOtpControl" >
-    <renderer:EntryControl   x:Name="txtEditor" HeightRequest="1"  Grid.Row="0"  TextChanged="Editor_TextChanged" Keyboard="Numeric" TextColor="Transparent"   HorizontalOptions="FillAndExpand"/>
-    <StackLayout Orientation="Horizontal" Grid.Row="1" BindableLayout.ItemsSource="{Binding Source={x:Static local:CustomOtpControl.EntryList}}" >
+    <renderer:EntryControl Grid.Column="0"   x:Name="txtEditor" HeightRequest="1"  Grid.Row="0"  TextChanged="Editor_TextChanged" Keyboard="Numeric" TextColor="Transparent"   HorizontalOptions="FillAndExpand"/>
+    <StackLayout Grid.Column="0" Orientation="Horizontal" Grid.Row="1" BindableLayout.ItemsSource="{Binding Source={x:Static local:CustomOtpControl.EntryList}}" >
         <BindableLayout.ItemTemplate>
             <DataTemplate x:DataType="models:OtpEntryModel">
                 <StackLayout Spacing="10" HeightRequest="40" VerticalOptions="Center" >
