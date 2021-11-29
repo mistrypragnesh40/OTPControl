@@ -32,7 +32,7 @@ namespace OTPControl
         public string SelectedOtp
         {
             get => (string)base.GetValue(SelectedOtpProperty);
-            private set => base.SetValue(SelectedOtpProperty, value);
+            set => base.SetValue(SelectedOtpProperty, value);
         }
 
 
