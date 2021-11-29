@@ -22,6 +22,21 @@ namespace OTPControl
             this.txtEditor.Focus();
         }
 
+        public static readonly BindableProperty SelectedOtpProperty = BindableProperty.Create(
+        propertyName: nameof(SelectedOtp),
+        returnType: typeof(string),
+        defaultValue: "",
+        declaringType: typeof(CustomOtpControl),
+        defaultBindingMode: BindingMode.TwoWay);
+
+        public string SelectedOtp
+        {
+            get => (string)base.GetValue(SelectedOtpProperty);
+            private set => base.SetValue(SelectedOtpProperty, value);
+        }
+
+
+
 
         public static readonly BindableProperty FillBorderColorProperty = BindableProperty.Create(
          propertyName: nameof(FillBorderColor),
@@ -82,7 +97,7 @@ namespace OTPControl
             var context = (CustomOtpControl)this.BindingContext;
             if (editor.Text.Length > OtpLength)
             {
-                editor.Text  = editor.Text.Substring(0, OtpLength);
+                editor.Text = editor.Text.Substring(0, OtpLength);
                 return;
             }
 
@@ -108,6 +123,13 @@ namespace OTPControl
                 {
                     break;
                 }
+
+            }
+
+            SelectedOtp = "";
+            foreach (var entry in EntryList)
+            {
+                SelectedOtp += entry.Text;
             }
         }
 

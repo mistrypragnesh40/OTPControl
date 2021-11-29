@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:otpcontrol="clr-namespace:OTPControl"
              x:Class="OTPControl.MainPage">
 
-    <StackLayout VerticalOptions="Center" HeightRequest="100" > 
-        <otpcontrol:CustomOtpControl FillBorderColor="Orange"   HorizontalOptions="Center" OtpLength="4" />
+    <StackLayout VerticalOptions="Center" >
+        <Label Text="{Binding Source={x:Reference tx},Path=SelectedOtp}" />
+        <otpcontrol:CustomOtpControl x:Name="tx" OtpLength="5" FillBorderColor="Orange"   HorizontalOptions="Center"  />
     </StackLayout>
 
 </ContentPage>

@@ -14,6 +14,9 @@
     <PackageIcon>3954528.png</PackageIcon>
     <PackageIconUrl />
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/mistrypragnesh40/OTPControl</RepositoryUrl>
+    <PackageTags>OTP Entry Control, Xamarin Form OTP Control</PackageTags>
+    <PackageId>OTPEntryControl</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
