@@ -17,6 +17,7 @@
     <RepositoryUrl>https://github.com/mistrypragnesh40/OTPControl</RepositoryUrl>
     <PackageTags>OTP Entry Control, Xamarin Form OTP Control</PackageTags>
     <PackageId>OTPEntryControl</PackageId>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
