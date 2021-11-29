@@ -8,12 +8,12 @@
       xmlns:renderer="clr-namespace:OTPControl.Renderer"
       RowDefinitions="1,Auto" ColumnDefinitions="Auto"
       x:Class="OTPControl.CustomOtpControl" >
-    <renderer:EntryControl Grid.Column="0"   x:Name="txtEditor" HeightRequest="1"  Grid.Row="0"  TextChanged="Editor_TextChanged" Keyboard="Numeric" TextColor="Transparent"   HorizontalOptions="FillAndExpand"/>
-    <StackLayout Grid.Column="0" Orientation="Horizontal" Grid.Row="1" BindableLayout.ItemsSource="{Binding Source={x:Static local:CustomOtpControl.EntryList}}" >
+    <renderer:EntryControl Grid.Column="0" HeightRequest="0"   x:Name="txtEditor"  Grid.Row="0"  TextChanged="Editor_TextChanged" Keyboard="Numeric" TextColor="Transparent"   HorizontalOptions="FillAndExpand"/>
+    <StackLayout HeightRequest="-1" Grid.Column="0" Orientation="Horizontal" Grid.Row="1" BindableLayout.ItemsSource="{Binding Source={x:Static local:CustomOtpControl.EntryList}}" >
         <BindableLayout.ItemTemplate>
             <DataTemplate x:DataType="models:OtpEntryModel">
                 <StackLayout Spacing="10" HeightRequest="40" VerticalOptions="Center" >
-                    <Label HeightRequest="30" Text="{Binding Text}"  HorizontalTextAlignment="Center" WidthRequest="60" />
+                    <Label HeightRequest="30" Text="{Binding Text}" FontSize="15" TextColor="Black" FontAttributes="Bold"  HorizontalTextAlignment="Center" WidthRequest="60" />
                     <BoxView WidthRequest="60" Color="{Binding Color}" HeightRequest="1" HorizontalOptions="Center" />
                 </StackLayout>
             </DataTemplate>

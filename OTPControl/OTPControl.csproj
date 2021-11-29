@@ -3,6 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <Company>Xamarin Coding Tutorial</Company>
+    <Product>Xamarin Coding Tutorial</Product>
+    <Authors>Xamarin Coding Tutorial</Authors>
+    <Description>Custom OTP Entry Control.
+</Description>
+    <Copyright>Xamarin Coding Tutorial</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://xamarincodingtutorial.blogspot.com/2021/11/xamarin-form-otp-control.html</PackageProjectUrl>
+    <PackageIcon>3954528.png</PackageIcon>
+    <PackageIconUrl />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -19,5 +30,12 @@
     <EmbeddedResource Update="CustomOtpControl.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Desktop\3954528.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>
