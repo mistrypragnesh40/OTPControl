@@ -9,7 +9,10 @@ Otp Entry Control - is cross platform plugin for Xamairn Forms which allows you 
 Available on Nuget : https://www.nuget.org/packages/OTPEntryControl/1.0.4  
 Install this Plugin in your Xamarin Form Project.
 
+
 ## Implementation Example
+namespace :  xmlns:otpcontrol="clr-namespace:OTPControl;assembly=OTPControl"
+
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:otpcontrol="clr-namespace:OTPControl;assembly=OTPControl"
