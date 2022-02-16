@@ -9,17 +9,17 @@
       RowDefinitions="Auto,Auto" ColumnDefinitions="Auto"
       x:Class="OTPControl.CustomOtpControl" >
     <Entry Grid.Column="0" HeightRequest="0.1"   x:Name="txtEditor"  Grid.Row="0"  TextChanged="Editor_TextChanged" Keyboard="Numeric" TextColor="Transparent"   HorizontalOptions="FillAndExpand"/>
-    <StackLayout HeightRequest="100" Grid.Column="0" Orientation="Horizontal" Grid.Row="1" BindableLayout.ItemsSource="{Binding Source={x:Static local:CustomOtpControl.EntryList}}" >
+    <FlexLayout  Direction="Row"   Wrap="Wrap" JustifyContent="Center"  Grid.Column="0"  Grid.Row="1" BindableLayout.ItemsSource="{Binding Source={x:Static local:CustomOtpControl.EntryList}}" >
         <BindableLayout.ItemTemplate>
             <DataTemplate x:DataType="models:OtpEntryModel">
-                <StackLayout Spacing="10" HeightRequest="40" VerticalOptions="Center" >
+                <StackLayout  Padding="5,10,5,10" Spacing="5"  VerticalOptions="Center" >
                     <Label HeightRequest="30" Text="{Binding Text}" FontSize="15" TextColor="Black" FontAttributes="Bold"  HorizontalTextAlignment="Center" WidthRequest="60" />
                     <BoxView WidthRequest="60" Color="{Binding Color}" HeightRequest="1" HorizontalOptions="Center" />
                 </StackLayout>
             </DataTemplate>
         </BindableLayout.ItemTemplate>
-        <StackLayout.GestureRecognizers>
+        <FlexLayout.GestureRecognizers>
             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_For_Focus" />
-        </StackLayout.GestureRecognizers>
-    </StackLayout>
+        </FlexLayout.GestureRecognizers>
+    </FlexLayout>
 </Grid>

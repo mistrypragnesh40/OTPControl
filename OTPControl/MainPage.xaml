@@ -1,11 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:otpcontrol="clr-namespace:OTPControl"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:DataType="viewmodels:MainPageViewModel"
+             xmlns:otpcontrol="clr-namespace:OTPControl" 
+             xmlns:viewmodels="clr-namespace:OTPControl.ViewModels"
              x:Class="OTPControl.MainPage">
 
     <StackLayout VerticalOptions="Center" >
-        <Label Text="{Binding Source={x:Reference tx},Path=SelectedOtp}" />
-        <otpcontrol:CustomOtpControl x:Name="tx" OtpLength="5" FillBorderColor="Orange"   HorizontalOptions="Center"  />
+        <otpcontrol:CustomOtpControl x:Name="otpControlName"  OtpLength="8" FillBorderColor="Orange"   HorizontalOptions="Center"  />
+
+        <Label Text="{Binding SelectedOTP}" />
+        <Button Text="Get Otp"  Command="{Binding GetOtpCommand}" CommandParameter="{Binding Source={x:Reference otpControlName},Path=SelectedOtp}" />
+
     </StackLayout>
 
 </ContentPage>

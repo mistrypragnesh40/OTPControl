@@ -18,6 +18,7 @@
     <PackageTags>OTP Entry Control, Xamarin Form OTP Control</PackageTags>
     <PackageId>OTPEntryControl</PackageId>
     <Version>1.0.1</Version>
+    <ApplicationIcon>3954528.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -26,10 +27,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="E:\3954528.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+    <Content Include="3954528.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,5 +39,12 @@
     <EmbeddedResource Update="CustomOtpControl.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="3954528.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>
