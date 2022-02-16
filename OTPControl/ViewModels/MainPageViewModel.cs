@@ -16,6 +16,15 @@ namespace OTPControl.ViewModels
 
         }
 
+        private string _selectedOTP1;
+        public string SelectedOTP1
+        {
+            get => _selectedOTP1;
+            set => SetProperty(ref _selectedOTP1, value);
+
+        }
+
+
         public MainPageViewModel()
         {
 
@@ -26,5 +35,10 @@ namespace OTPControl.ViewModels
          {
              SelectedOTP = param;
          });
+
+        public ICommand GetOtpCommand1 => new Command<string>((param) =>
+        {
+            SelectedOTP1 = param;
+        });
     }
 }

@@ -7,10 +7,15 @@
              x:Class="OTPControl.MainPage">
 
     <StackLayout VerticalOptions="Center" >
-        <otpcontrol:CustomOtpControl x:Name="otpControlName"  OtpLength="8" FillBorderColor="Orange"   HorizontalOptions="Center"  />
+        <otpcontrol:CustomOtpControl x:Name="otpControlName"   OtpLength="6" FillBorderColor="Orange"   HorizontalOptions="Center"  />
+        <otpcontrol:CustomOtpControl x:Name="otpControlName1"   OtpLength="6" FillBorderColor="Orange"   HorizontalOptions="Center"  />
+
 
         <Label Text="{Binding SelectedOTP}" />
+
+        <Label Text="{Binding SelectedOTP1}" />
         <Button Text="Get Otp"  Command="{Binding GetOtpCommand}" CommandParameter="{Binding Source={x:Reference otpControlName},Path=SelectedOtp}" />
+        <Button Text="Get Otp"  Command="{Binding GetOtpCommand1}" CommandParameter="{Binding Source={x:Reference otpControlName1},Path=SelectedOtp}" />
 
     </StackLayout>
 

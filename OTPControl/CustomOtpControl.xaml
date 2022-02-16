@@ -5,20 +5,20 @@
              x:Name="this"
              xmlns:local="clr-namespace:OTPControl"
       BindingContext="{Binding  Source={x:Reference this}}"
-      xmlns:renderer="clr-namespace:OTPControl.Renderer"
       RowDefinitions="Auto,Auto" ColumnDefinitions="Auto"
       x:Class="OTPControl.CustomOtpControl" >
-    <Entry Grid.Column="0" HeightRequest="0.1"   x:Name="txtEditor"  Grid.Row="0"  
+    <Entry Grid.Column="0" HeightRequest="0.01"   x:Name="txtEditor"  Grid.Row="0"  
            TextChanged="Editor_TextChanged" Keyboard="Numeric" TextColor="Transparent"   
            HorizontalOptions="FillAndExpand"/>
     <FlexLayout  Direction="Row"    JustifyContent="Center"  Grid.Column="0"  Grid.Row="1" 
-                 BindableLayout.ItemsSource="{Binding Source={x:Static local:CustomOtpControl.EntryList}}" >
+                 BindableLayout.ItemsSource="{Binding Source={x:Reference this},Path=EntryList}" >
         <BindableLayout.ItemTemplate>
             <DataTemplate x:DataType="models:OtpEntryModel">
-                <StackLayout  Spacing="5"  VerticalOptions="Center" >
-                    <Label HeightRequest="30"  Text="{Binding Text}" FontSize="15" TextColor="Black" FontAttributes="Bold"  HorizontalTextAlignment="Center" WidthRequest="60" />
-                    <BoxView  Color="{Binding Color}" HeightRequest="1" HorizontalOptions="Center" />
-                </StackLayout>
+                <Grid RowDefinitions="Auto,1" ColumnDefinitions="Auto,Auto" RowSpacing="{Binding Source={x:Reference this},Path=VerticalSpacing}" ColumnSpacing="{Binding Source={x:Reference this},Path=HorizontalSpacing}"   VerticalOptions="Center" >
+                    <Label Grid.Row="0" HeightRequest="30"  Text="{Binding Text}" FontSize="15" TextColor="Black" 
+                           FontAttributes="Bold"  HorizontalTextAlignment="Center"  />
+                    <BoxView Grid.Row="1"  Color="{Binding Color}" HeightRequest="1" HorizontalOptions="Center" />
+                </Grid>
             </DataTemplate>
         </BindableLayout.ItemTemplate>
         <FlexLayout.GestureRecognizers>

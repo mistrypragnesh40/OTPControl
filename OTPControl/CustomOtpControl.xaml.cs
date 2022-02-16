@@ -14,7 +14,7 @@ namespace OTPControl
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomOtpControl : Grid
     {
-        public static ObservableCollection<OtpEntryModel> EntryList { get; set; } = new ObservableCollection<OtpEntryModel>();
+        public ObservableCollection<OtpEntryModel> EntryList { get; set; } = new ObservableCollection<OtpEntryModel>();
 
         public CustomOtpControl()
         {
@@ -74,21 +74,25 @@ namespace OTPControl
         private static void OtpLengthPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var control = (CustomOtpControl)bindable;
-
             if (newValue != null)
             {
-                for (int i = 0; i < (int)newValue; i++)
-                {
-                    EntryList.Add(new OtpEntryModel { Color = control.EmptyBorderColor, Text = "" });
-                }
-
-                control.txtEditor.MaxLength = (int)newValue;
+                control.CreateOtpList((int)newValue);
             }
         }
         public int OtpLength
         {
             get => (int)base.GetValue(OtpLengthProperty);
             set => base.SetValue(OtpLengthProperty, value);
+        }
+
+        private void CreateOtpList(int newValue)
+        {
+            EntryList.Clear();
+            for (int i = 0; i < newValue; i++)
+            {
+                EntryList.Add(new OtpEntryModel { Color = EmptyBorderColor, Text = "" });
+                txtEditor.MaxLength = newValue;
+            }
         }
 
         private void Editor_TextChanged(object sender, TextChangedEventArgs e)
@@ -142,5 +146,34 @@ namespace OTPControl
         {
             this.txtEditor.Focus();
         }
+
+        #region Spacing Property
+        public static readonly BindableProperty HorizontalSpacingProperty = BindableProperty.Create(
+        propertyName: nameof(HorizontalSpacing),
+        returnType: typeof(double),
+        defaultValue: 10d,
+        declaringType: typeof(CustomOtpControl),
+        defaultBindingMode: BindingMode.OneWay);
+
+
+        public double HorizontalSpacing
+        {
+            get => (double)base.GetValue(HorizontalSpacingProperty);
+            set => base.SetValue(HorizontalSpacingProperty, value);
+        }
+
+        public static readonly BindableProperty VerticalSpacingProperty = BindableProperty.Create(
+        propertyName: nameof(VerticalSpacing),
+        returnType: typeof(double),
+        defaultValue: 5d,
+        declaringType: typeof(CustomOtpControl),
+        defaultBindingMode: BindingMode.OneWay);
+        public double VerticalSpacing
+        {
+            get => (double)base.GetValue(VerticalSpacingProperty);
+            set => base.SetValue(VerticalSpacingProperty, value);
+        }
+
+        #endregion
     }
 }

@@ -17,7 +17,7 @@
     <RepositoryUrl>https://github.com/mistrypragnesh40/OTPControl</RepositoryUrl>
     <PackageTags>OTP Entry Control, Xamarin Form OTP Control</PackageTags>
     <PackageId>OTPEntryControl</PackageId>
-    <Version>1.0.5</Version>
+    <Version>1.0.7</Version>
     <ApplicationIcon>3954528.ico</ApplicationIcon>
   </PropertyGroup>
 
