@@ -87,7 +87,6 @@ namespace OTPControl
 
         private void CreateOtpList(int newValue)
         {
-            EntryList.Clear();
             for (int i = 0; i < newValue; i++)
             {
                 EntryList.Add(new OtpEntryModel { Color = EmptyBorderColor, Text = "" });
@@ -135,11 +134,6 @@ namespace OTPControl
             {
                 SelectedOtp += entry.Text;
             }
-        }
-
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-
         }
 
         private void TapGestureRecognizer_Tapped_For_Focus(object sender, EventArgs e)
