@@ -38,4 +38,9 @@ namespace :  xmlns:otpcontrol="clr-namespace:OTPControl;assembly=OTPControl"
 4. SelectedOtp : This Property will return Entered Otp in Text Format.
 
 
+## How To Get OTP Text on Button Click (ViewModel)
+```
+<otpcontrol:CustomOtpControl x:Name="otpControlName"  OtpLength="5" FillBorderColor="Orange"   HorizontalOptions="Center"  />  
+<Button Text="Get Otp"  Command="{Binding GetOtpCommand}" CommandParameter="{Binding Source={x:Reference otpControlName},Path=SelectedOtp}" />
+```
 
