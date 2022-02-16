@@ -36,6 +36,13 @@ namespace :  xmlns:otpcontrol="clr-namespace:OTPControl;assembly=OTPControl"
 2. FillBorderColor : Entered Otp Tint Color.
 3. EmptyBorderColor: Default Border Color.
 4. SelectedOtp : This Property will return Entered Otp in Text Format.
+5. HorizontalSpacing: This Property used for setting horizontal space.
+6. VerticalSpacing : This property used for setting vertical space
 
 
+## How To Get OTP Text on Button Click (ViewModel)
+```
+<otpcontrol:CustomOtpControl x:Name="otpControlName"  OtpLength="5" FillBorderColor="Orange"   HorizontalOptions="Center"  />  
+<Button Text="Get Otp"  Command="{Binding GetOtpCommand}" CommandParameter="{Binding Source={x:Reference otpControlName},Path=SelectedOtp}" />
+```
 
